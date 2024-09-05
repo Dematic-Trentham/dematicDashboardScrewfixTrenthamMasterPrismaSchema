@@ -1,0 +1,12 @@
+model sorterJourneyRequests {
+    id                      Int       @id @default(autoincrement())
+    requestedUL             String
+    createdDate             DateTime  @default(now())
+    updatedDate             DateTime  @updatedAt
+    processingStartedDate   DateTime?
+    processingCompletedDate DateTime?
+    status                  String
+    error                   String?
+    journey                 String
+    currentStatusStep       String?
+}

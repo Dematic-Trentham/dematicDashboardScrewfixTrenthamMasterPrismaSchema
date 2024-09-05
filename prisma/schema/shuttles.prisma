@@ -1,0 +1,56 @@
+model dmsShuttleLocations {
+    macAddress             String    @unique
+    shuttleID              String
+    currentLocation        String
+    locationLastUpdated    DateTime
+    currentFirmwareVersion String?
+    lastFirmwareUpdate     DateTime?
+}
+
+model dmsShuttleSwapLogs {
+    ID            String   @id @default(uuid())
+    timestamp     DateTime @default(now())
+    aisle         Int
+    level         Int
+    oldMacAddress String
+    newMacAddress String
+    oldShuttleID  String
+    newShuttleID  String
+}
+
+model dmsShuttleFaultCodeLookup {
+    ID           String @id @unique
+    faultMessage String
+
+    dmsShuttleFaultLogs dmsShuttleFaultLogs[]
+}
+
+model dmsShuttleFaultLogs {
+    ID                String                    @id @default(uuid())
+    timestamp         DateTime                  @default(now())
+    aisle             Int
+    level             Int
+    macAddress        String
+    shuttleID         String
+    faultCode         String
+    faultMessage      dmsShuttleFaultCodeLookup @relation(fields: [faultCode], references: [ID])
+    xLocation         Int
+    ZLocation         Int
+    WLocation         Int
+    resovledTimestamp DateTime
+    resolvedReason    String
+    xCoordinate       Int
+    rawInfo           String
+}
+
+model dmsShuttleMissions {
+    ID         String   @id @default(uuid())
+    timeStamp  DateTime
+    timeRange  String
+    aisle      Int
+    level      Int
+    shuttleID  String
+    totalPicks Int
+    totalDrops Int
+    totalIATs  Int
+}
