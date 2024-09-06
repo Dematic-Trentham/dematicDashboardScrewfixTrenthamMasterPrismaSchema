@@ -1,4 +1,4 @@
-model systemErrors {
+model dashboardSystemErrors {
     ID        Int       @id @default(autoincrement())
     error     String    @unique(map: "error") @default("0") @db.VarChar(75)
     lastIssue DateTime? @default(now()) @db.Timestamp(0)

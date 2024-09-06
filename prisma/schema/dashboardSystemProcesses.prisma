@@ -1,4 +1,4 @@
-model systemProcesses {
+model dashboardSystemProcesses {
     id               String    @id @default(uuid())
     processName      String    @unique
     description      String?

@@ -1,4 +1,4 @@
-model systemParameters {
+model dashboardSystemParameters {
     ID           Int       @id @default(autoincrement())
     parameter    String    @unique(map: "parameter") @default("0") @db.VarChar(75)
     value        String    @db.Text
