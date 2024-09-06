@@ -37,7 +37,7 @@ model dmsShuttleFaultLogs {
     xLocation         Int
     ZLocation         Int
     WLocation         Int
-    resovledTimestamp DateTime
+    resolvedTimestamp DateTime
     resolvedReason    String
     xCoordinate       Int
     rawInfo           String
