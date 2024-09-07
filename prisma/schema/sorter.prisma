@@ -7,6 +7,6 @@ model sorterJourneyRequests {
     processingCompletedDate DateTime?
     status                  String
     error                   String?
-    journey                 String
+    journey                 String    @db.LongText
     currentStatusStep       String?
 }
