@@ -21,26 +21,24 @@ model dmsShuttleSwapLogs {
 model dmsShuttleFaultCodeLookup {
     ID           String @id @unique
     faultMessage String
-
-    dmsShuttleFaultLogs dmsShuttleFaultLogs[]
 }
 
 model dmsShuttleFaultLogs {
-    ID                String                    @id @default(uuid())
-    timestamp         DateTime                  @default(now())
+    ID                String    @id @default(uuid())
+    timestamp         DateTime  @default(now())
     aisle             Int
     level             Int
     macAddress        String
     shuttleID         String
     faultCode         String
-    faultMessage      dmsShuttleFaultCodeLookup @relation(fields: [faultCode], references: [ID])
+    faultMessage      Int       @default(0)
     xLocation         Int
     ZLocation         Int
     WLocation         Int
     resolvedTimestamp DateTime?
     resolvedReason    String
     xCoordinate       Int
-    rawInfo           String                    @db.LongText
+    rawInfo           String    @db.LongText
 }
 
 model dmsShuttleMissions {
