@@ -10,3 +10,45 @@ model sorterJourneyRequests {
     journey                 String    @db.LongText
     currentStatusStep       String?
 }
+
+model sorterInductStats {
+    id                   String   @id @default(uuid())
+    date                 DateTime
+    inductNumber         Int
+    badPositionsTotal    Int
+    badPositionsForward  Int
+    badPositionsBackward Int
+    recenteredTotal      Int
+    recenteredLeft       Int
+    recenteredRight      Int
+    recirculatedTotal    Int
+    totalInducts         Int
+}
+
+model sorterCellStats {
+    id                   String   @id @default(uuid())
+    date                 DateTime
+    cellNumber           Int
+    badPositionsTotal    Int
+    badPositionsForward  Int
+    badPositionsBackward Int
+    recenteredTotal      Int
+    recenteredLeft       Int
+    recenteredRight      Int
+    recirculatedTotal    Int
+    totalInducts         Int
+}
+
+model sorterChuteStats {
+    id                   String   @id @default(uuid())
+    date                 DateTime
+    chuteNumber          Int
+    badPositionsTotal    Int
+    badPositionsForward  Int
+    badPositionsBackward Int
+    recenteredTotal      Int
+    recenteredLeft       Int
+    recenteredRight      Int
+    recirculatedTotal    Int
+    totalInducts         Int
+}
