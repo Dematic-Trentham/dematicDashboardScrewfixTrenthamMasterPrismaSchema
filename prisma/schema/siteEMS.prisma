@@ -3,6 +3,7 @@ model siteEMS {
     lastUpdated DateTime @default(now())
     name        String   @unique
     location    String
+    subLocation String
     description String
     value       String
 }
