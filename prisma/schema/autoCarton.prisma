@@ -6,7 +6,7 @@ model autoCartonFaults {
     faultCode  Int
 }
 
-model faultCodeLookup {
+model autoCartonFaultCodeLookup {
     ID           Int     @id @default(autoincrement())
     faultMessage String
 }
