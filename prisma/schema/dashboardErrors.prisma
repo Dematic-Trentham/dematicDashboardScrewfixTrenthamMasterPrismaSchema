@@ -6,3 +6,12 @@ model dashboardSystemErrors {
 
     @@index([error], map: "key")
 }
+
+
+model dashboardSystemLog {
+    ID        Int       @id @default(autoincrement())
+    timestamp DateTime  @default(now()) @db.Timestamp(0)
+    process   String    @db.VarChar(75)
+    manualLog String?
+    message     String    @db.VarChar(75)
+}
