@@ -53,8 +53,7 @@ model sorterChuteStats {
     totalInducts         Int
 }
 
-model sorterDisabledCells
-{
+model sorterDisabledCells {
     id                   String   @id @default(uuid())
     date                 DateTime
     cellNumber           Int
