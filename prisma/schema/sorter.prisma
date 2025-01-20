@@ -52,3 +52,12 @@ model sorterChuteStats {
     recirculatedTotal    Int
     totalInducts         Int
 }
+
+model sorterDisabledCells
+{
+    id                   String   @id @default(uuid())
+    date                 DateTime
+    cellNumber           Int
+    disabled             Boolean
+    dateChanged        DateTime
+}
