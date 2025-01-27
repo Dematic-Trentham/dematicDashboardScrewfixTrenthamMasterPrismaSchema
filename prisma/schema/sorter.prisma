@@ -60,3 +60,11 @@ model sorterDisabledCells {
     disabled             Boolean
     dateChanged        DateTime
 }
+
+model sorterDisabledCellsHistory {
+    id                   String   @id @default(uuid())
+    date                 DateTime
+    cellNumber           Int
+    disabled             Boolean
+    dateChanged        DateTime
+}
