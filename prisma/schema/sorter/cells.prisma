@@ -13,8 +13,6 @@ model sorterDisabledCells {
   cellId      String
   disabled    Boolean
   dateChanged DateTime
-
-  cell Cell @relation(fields: [cellId], references: [id])
 }
 
 model sorterDisabledCellsHistory {
@@ -23,8 +21,6 @@ model sorterDisabledCellsHistory {
   cellId      String
   disabled    Boolean
   dateChanged DateTime
-
-  cell Cell @relation(fields: [cellId], references: [id])
 }
 
 model sorterCellStats {
@@ -39,6 +35,4 @@ model sorterCellStats {
   recenteredRight      Int
   recirculatedTotal    Int
   totalInducts         Int
-
-  cell Cell @relation(fields: [cellId], references: [id])
 }
