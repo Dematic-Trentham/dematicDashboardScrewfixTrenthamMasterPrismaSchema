@@ -1,22 +1,17 @@
-model Cell {
-  id         String @id @default(uuid())
-  cellNumber Int
-}
-
 model sorterDisabledCells {
-  id          String   @id @default(uuid())
-  date        DateTime
-  cellId      String
-  disabled    Boolean
-  dateChanged DateTime
+    id                   String   @id @default(uuid())
+    date                 DateTime
+    cellNumber           Int
+    disabled             Boolean
+    dateChanged        DateTime
 }
 
 model sorterDisabledCellsHistory {
-  id          String   @id @default(uuid())
-  date        DateTime
-  cellId      String
-  disabled    Boolean
-  dateChanged DateTime
+    id                   String   @id @default(uuid())
+    date                 DateTime
+    cellNumber           Int
+    disabled             Boolean
+    dateChanged        DateTime
 }
 
 model sorterCellStats {
