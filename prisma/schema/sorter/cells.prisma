@@ -1,0 +1,44 @@
+model Cell {
+  id         String @id @default(uuid())
+  cellNumber Int
+
+  sorterDisabledCells        sorterDisabledCells[]
+  sorterDisabledCellsHistory sorterDisabledCellsHistory[]
+  sorterCellStats            sorterCellStats[]
+}
+
+model sorterDisabledCells {
+  id          String   @id @default(uuid())
+  date        DateTime
+  cellId      String
+  disabled    Boolean
+  dateChanged DateTime
+
+  cell Cell @relation(fields: [cellId], references: [id])
+}
+
+model sorterDisabledCellsHistory {
+  id          String   @id @default(uuid())
+  date        DateTime
+  cellId      String
+  disabled    Boolean
+  dateChanged DateTime
+
+  cell Cell @relation(fields: [cellId], references: [id])
+}
+
+model sorterCellStats {
+  id                   String   @id @default(uuid())
+  date                 DateTime
+  cellId               String
+  badPositionsTotal    Int
+  badPositionsForward  Int
+  badPositionsBackward Int
+  recenteredTotal      Int
+  recenteredLeft       Int
+  recenteredRight      Int
+  recirculatedTotal    Int
+  totalInducts         Int
+
+  cell Cell @relation(fields: [cellId], references: [id])
+}
