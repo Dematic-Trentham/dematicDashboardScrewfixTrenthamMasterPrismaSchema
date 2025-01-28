@@ -1,10 +1,6 @@
 model Cell {
   id         String @id @default(uuid())
   cellNumber Int
-
-  sorterDisabledCells        sorterDisabledCells[]
-  sorterDisabledCellsHistory sorterDisabledCellsHistory[]
-  sorterCellStats            sorterCellStats[]
 }
 
 model sorterDisabledCells {
