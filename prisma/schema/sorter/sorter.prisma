@@ -38,3 +38,18 @@ model sorterChuteStats {
   recirculatedTotal    Int
   totalInducts         Int
 }
+
+
+model sortetStopsStats {
+  id                   String   @id @default(uuid())
+  stopDate                 DateTime
+  restartDate              DateTime
+  location             Int
+  UL                   String
+  foundOnCell          Int
+  wmsCell              Int  
+  inductNumber         Int
+  chuteNumber          Int
+  messuredWeight       Float
+  actualWeight         Float
+}
