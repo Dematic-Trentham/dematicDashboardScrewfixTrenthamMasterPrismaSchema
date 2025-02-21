@@ -6,8 +6,6 @@ model dmsShuttleLocations {
   currentFirmwareVersion String?
   lastFirmwareUpdate     DateTime?
 
-  dmsShuttleFaultLogs dmsShuttleFaultLogs[]
-  dmsShuttleMissions  dmsShuttleMissions[]
 }
 
 model dmsShuttleSwapLogs {
@@ -43,7 +41,6 @@ model dmsShuttleFaultLogs {
   xCoordinate       Int
   rawInfo           String    @db.LongText
 
-  dmsShuttleLocation dmsShuttleLocations @relation(fields: [shuttleID], references: [shuttleID])
 }
 
 model dmsShuttleMissions {
@@ -56,6 +53,4 @@ model dmsShuttleMissions {
   totalPicks Int
   totalDrops Int
   totalIATs  Int
-
-  dmsShuttleLocation dmsShuttleLocations @relation(fields: [shuttleID], references: [shuttleID])
 }
