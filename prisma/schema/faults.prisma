@@ -1,0 +1,6 @@
+model faultText {
+  id          String   @id @default(uuid())
+  title       String   @unique
+    message     String   @db.Text
+}
+
