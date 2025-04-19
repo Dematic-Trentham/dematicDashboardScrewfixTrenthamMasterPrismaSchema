@@ -4,3 +4,9 @@ model faultText {
     message     String   @db.Text
 }
 
+
+model controlRoomFaults{
+  id          String   @id @default(uuid())
+  faultID    String
+  DMMSDONE String
+}
