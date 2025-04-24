@@ -1,9 +1,8 @@
 model ipsToPing {
   id          String   @id @default(uuid())
   ipAddress   String   @unique
-  lastPinged  DateTime? @db.Timestamp(6)
+  lastUpdated  DateTime? @db.Timestamp(6)
   pingStatus    Boolean? @default(false)
-  pingTime    Int?
   pingTimeMS  Int?
   machineName String? @db.Text
   plc          Boolean? @default(false)
@@ -16,7 +15,6 @@ model pingHistory {
   id          String   @id @default(uuid())
   ipAddress   String   @db.Text
   pingStatus   Boolean? @default(false)
-  pingTime    Int?
   pingTimeMS  Int?
   machineName String? @db.Text
   createdAt   DateTime @default(now()) @db.Timestamp(6)
