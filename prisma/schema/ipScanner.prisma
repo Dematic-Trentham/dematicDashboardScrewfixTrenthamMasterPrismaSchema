@@ -1,0 +1,21 @@
+model ipsToPing {
+  id          String   @id @default(uuid())
+  ipAddress   String   @unique
+  lastPinged  DateTime? @db.Timestamp(6)
+  pingStatus  String?   @db.Text
+  pingTime    Int?
+  pingTimeMS  Int?
+  machineName String? @db.Text
+ 
+}
+
+model pingHistory {
+  id          String   @id @default(uuid())
+  ipAddress   String   @db.Text
+  pingStatus  String?   @db.Text
+  pingTime    Int?
+  pingTimeMS  Int?
+  machineName String? @db.Text
+  createdAt   DateTime @default(now()) @db.Timestamp(6)
+}
+  
