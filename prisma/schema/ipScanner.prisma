@@ -7,6 +7,7 @@ model ipsToPing {
   pingTimeMS  Int?
   machineName String? @db.Text
   plc          Boolean? @default(false)
+  plcSlot   Int? @default(0)
  
 }
 
