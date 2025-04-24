@@ -8,6 +8,7 @@ model ipsToPing {
   machineName String? @db.Text
   plc          Boolean? @default(false)
   plcSlot   Int? @default(0)
+  plcStatus Boolean? @default(false)
  
 }
 
