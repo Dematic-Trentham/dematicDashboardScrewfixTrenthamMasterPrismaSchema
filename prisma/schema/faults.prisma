@@ -5,8 +5,23 @@ model faultText {
 }
 
 
-model controlRoomFaults{
-  id          String   @id @default(uuid())
-  faultID    String
-  DMMSDONE String
+model controlRoomFaults {
+  id                String   @id @default(uuid())
+  faultId           String
+  happenedAt        DateTime
+  workStartedAt     DateTime
+  workFinishedAt    DateTime
+  workedTime        String
+  controlRoomOp     String
+  jambuster         String
+  dematicEngineer   String
+  assetNumber       String
+  assetDescription  String
+  daiRef            String?
+  comment           String?
+  feedback          String?
+  createdBy         String
+  updatedBy         String
+  createdAt         DateTime
+  updatedAt         DateTime
 }
