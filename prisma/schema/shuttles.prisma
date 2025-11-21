@@ -54,3 +54,10 @@ model dmsShuttleMissions {
   totalDrops Int
   totalIATs  Int
 }
+
+model dmsShuttleLastMaintenance {
+  macAddress          String   @unique
+  shuttleID           String   @unique
+  lastMaintenanceDate DateTime
+  maintenanceDetails  String   @db.LongText
+}
