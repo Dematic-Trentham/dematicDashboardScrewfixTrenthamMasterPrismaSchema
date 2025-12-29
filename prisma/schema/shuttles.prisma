@@ -57,8 +57,8 @@ model dmsShuttleMissions {
 
 model dmsShuttleLastMaintenance {
   ID                  String   @id @default(uuid())
-  macAddress          String   @unique
-  shuttleID           String   @unique
+  macAddress          String   
+  shuttleID           String   
   lastMaintenanceDate DateTime
   maintenanceDetails  String   @db.LongText
 }
