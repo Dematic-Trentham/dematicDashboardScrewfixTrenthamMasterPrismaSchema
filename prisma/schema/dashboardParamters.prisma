@@ -4,6 +4,7 @@ model dashboardSystemParameters {
   value        String    @db.Text
   lastModified DateTime? @default(now()) @db.Timestamp(0)
   hidden       Bytes?    @default(dbgenerated("0x31")) @db.Binary(1)
+  description  String?   @db.Text
 
   @@index([parameter], map: "key")
 }
