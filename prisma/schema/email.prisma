@@ -1,0 +1,8 @@
+model dashboardThingsToEmail {
+  id                   String   @id @default(uuid())
+  dateRaised           DateTime @default(now())
+  dateToSendUntil    DateTime
+  raisedBy             String
+  category             String
+  message              String   @db.LongText
+}
