@@ -1,10 +1,17 @@
 model dashboardSystemParameters {
-  ID           Int       @id @default(autoincrement())
-  parameter    String    @unique(map: "parameter") @default("0") @db.VarChar(75)
-  value        String    @db.Text
-  lastModified DateTime? @default(now()) @db.Timestamp(0)
-  hidden       Bytes?    @default(dbgenerated("0x31")) @db.Binary(1)
-  description  String?   @db.Text
+  ID           Int                           @id @default(autoincrement())
+  parameter    String                        @unique(map: "parameter") @default("0") @db.VarChar(75)
+  value        String                        @db.Text
+  lastModified DateTime?                     @default(now()) @db.Timestamp(0)
+  hidden       Bytes?                        @default(dbgenerated("0x31")) @db.Binary(1)
+  description  String?                       @db.Text
+  type         dashboardSystemParameterTypes @default(string)
 
   @@index([parameter], map: "key")
+}
+
+enum dashboardSystemParameterTypes {
+  string
+  number
+  boolean
 }
