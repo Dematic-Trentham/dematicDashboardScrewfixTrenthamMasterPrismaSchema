@@ -57,6 +57,7 @@ model sorterInductPositionStats {
   id               String   @id @default(uuid())
   date             DateTime
   inductNumber     Int
+  UL2              String
   startingPosition Int
   middlePosition   Int
   endPosition      Int
