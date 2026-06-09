@@ -16,6 +16,8 @@ model dmsShuttleSwapLogs {
   newMacAddress String
   oldShuttleID  String
   newShuttleID  String
+  type          String
+  user          String
 }
 
 model dmsShuttleFaultCodeLookup {
