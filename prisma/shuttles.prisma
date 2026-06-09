@@ -16,8 +16,6 @@ model dmsShuttleSwapLogs {
   newMacAddress String
   oldShuttleID  String
   newShuttleID  String
-  type          String
-  user          String
 }
 
 model dmsShuttleFaultCodeLookup {
@@ -62,4 +60,6 @@ model dmsShuttleLastMaintenance {
   shuttleID           String
   lastMaintenanceDate DateTime
   maintenanceDetails  String   @db.LongText
+  type                String
+  user                String
 }
