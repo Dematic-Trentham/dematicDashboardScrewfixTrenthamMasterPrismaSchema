@@ -42,16 +42,16 @@ model dmsShuttleFaultLogs {
 }
 
 model dmsShuttleMissions {
-  ID          String   @id @default(uuid())
-  timeStamp   DateTime
-  timeRange   String
-  aisle       Int
-  level       Int
-  shuttleID   String
-  totalPicks  Int
-  totalDrops  Int
-  totalIATs   Int
-  realTotalKM Int
+  ID           String   @id @default(uuid())
+  timeStamp    DateTime
+  timeRange    String
+  aisle        Int
+  level        Int
+  shuttleID    String
+  totalPicks   Int
+  totalDrops   Int
+  runningPicks Int
+  runningDrops Int
 }
 
 model dmsShuttleLastMaintenance {
