@@ -4,6 +4,8 @@ model autoCartonFaults {
   line        Int
   machineType autoCartonMachineType
   faultCode   Int
+
+  @@index([line, machineType])
 }
 
 model autoCartonFaultCodeLookup {
@@ -17,4 +19,6 @@ enum autoCartonMachineType {
   labeler
   erector
   barcoder
+  addressLabler
+  test
 }
